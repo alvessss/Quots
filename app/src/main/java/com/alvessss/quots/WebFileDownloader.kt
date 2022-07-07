@@ -17,11 +17,11 @@ class WebFileDownloader
             if (fd.createNewFile() or fd.exists())
             {
                 download(url, fileName)
-                Log.i(TAG, "File: ${fd.name} Length: ${fd.length()}")
+                //Log.i(TAG, "File: ${fd.name} Length: ${fd.length()}")
                 return fd.length() > 0
             }
 
-            Log.w(TAG, "File does not exists or cannot be created")
+            //Log.w(TAG, "File does not exists or cannot be created")
             return false
         }
 
