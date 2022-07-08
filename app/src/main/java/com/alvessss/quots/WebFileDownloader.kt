@@ -4,15 +4,11 @@ import java.io.File
 import java.io.FileOutputStream
 import java.net.URL
 
-class WebFileDownloader
-{
-    companion object
-    {
-        fun getFromUrl(url: String, fileName: String): Boolean
-        {
+class WebFileDownloader {
+    companion object {
+        fun getFromUrl(url: String, fileName: String): Boolean {
             val fd: File = File(fileName)
-            if (fd.createNewFile() or fd.exists())
-            {
+            if (fd.createNewFile() or fd.exists()) {
                 download(url, fileName)
                 return fd.length() > 0
             }
