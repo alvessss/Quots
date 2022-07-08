@@ -56,12 +56,16 @@ class MainActivity : AppCompatActivity() {
             if (event.action == MotionEvent.ACTION_UP) {
                 val finalX: Float = event.x
                 if (initialX > finalX) {
-                    Log.d(TAG, "right to left")
                     frameDisplay.next()
                 }
             }
             true
         })
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        frameDisplay.release()
     }
 }
 
