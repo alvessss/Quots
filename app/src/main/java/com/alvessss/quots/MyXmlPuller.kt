@@ -10,7 +10,7 @@ class MyXmlPuller
     {
         fun getFrom(xml: String): DataFetch {
             val serializer: Serializer = Persister()
-            return serializer.read(DataFetch::class.java, xml);
+            return serializer.read(DataFetch::class.java, xml.trimIndent());
         }
     }
 }
